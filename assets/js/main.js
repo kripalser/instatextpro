@@ -20,97 +20,104 @@
  ]
  };*/
 
-var itp = {};
+$(function () {
 
-itp.document = {
+  var itp = {};
 
-  _target: '.container'
+  itp.document = {
 
-};
+    _target: '.container'
 
-/*itp.data = {
+  };
 
- _ingredients: '<ol><li>Сельдь</li><li>Сливочное масло</li><li>Яйцо</li><li>Укроп</li></ol>',
- _steps: [
- '1. Яйцо отварить, почистить. Размять вилкой.',
- '2. Добавить к яйцу размягченное сливочное масло, сельдь рубленную, лук репчатый и горчицу (последняя по желанию).',
- '3. Провернуть все ингредиенты в блендере вместе с укропом — до кремообразного состояния.',
- '4. Приятного аппетита!'
- ]
+  /*itp.data = {
 
- };*/
+   _ingredients: '<ol><li>Сельдь</li><li>Сливочное масло</li><li>Яйцо</li><li>Укроп</li></ol>',
+   _steps: [
+   '1. Яйцо отварить, почистить. Размять вилкой.',
+   '2. Добавить к яйцу размягченное сливочное масло, сельдь рубленную, лук репчатый и горчицу (последняя по желанию).',
+   '3. Провернуть все ингредиенты в блендере вместе с укропом — до кремообразного состояния.',
+   '4. Приятного аппетита!'
+   ]
 
-itp.slide = {
+   };*/
 
-  _current  : 1,
-  _class    : 'slide',
-  _data     : [],
+  itp.slide = {
 
-  generate: function () {
+    _current: 1,
+    _class: 'slide',
+    _data: [],
 
-    var html = '<div class="' + itp.slide._class + '"></div>';
+    generate: function () {
 
-    $.each(itp.slide._data, function (index, value) {
+      var html = '<div class="' + itp.slide._class + '"></div>';
 
-      $(itp.document._target).append($(html).append(value).attr('id', 'slide' + (index + 1)));
+      $.each(itp.slide._data, function (index, value) {
 
-      if ((index + 1) === itp.slide._data.length) {
-        // console.log('Done!');
-        itp.image.generate();
-      }
+        $(itp.document._target).append($(html).append(value).attr('id', 'slide' + (index + 1)));
 
-    });
+        if ((index + 1) === itp.slide._data.length) {
+          // console.log('Done!');
+          itp.image.generate();
+        }
 
-  }
+      });
 
-};
+    }
 
-itp.image = {
+  };
 
-  generate: function () {
+  itp.image = {
 
-    var element = itp.slide._class + itp.slide._current;
-    var elementId = '#' + element;
-    var $element = $(elementId)[0];
+    generate: function () {
 
-    html2canvas($element, {
+      var element = itp.slide._class + itp.slide._current;
+      var elementId = '#' + element;
+      var $element = $(elementId)[0];
 
-      onclone: function (clonedDocument) {
-        $(clonedDocument).find(elementId).css('display', 'flex');
-      }
+      html2canvas($element, {
 
-    }).then(function (canvas) {
+        onclone: function (clonedDocument) {
+          $(clonedDocument).find(elementId).css('display', 'flex');
+        }
 
-      var img = new Image();
-      var imgSrc = canvas.toDataURL();
-      img.src = imgSrc;
-      var link = document.createElement('a');
-      link.appendChild(img);
-      link.href = imgSrc;
-      link.setAttribute('download', element + '.png');
-      $('.container').append($(link));
+      }).then(function (canvas) {
 
-      if (itp.slide._current < itp.slide._data.length) {
-        itp.slide._current++;
-        itp.image.generate();
-      }
+        var img = new Image();
+        // var imgSrc = canvas.toDataURL();
+        // img.src = imgSrc;
+        img.src = canvas.toDataURL();
+        img.className = 'slide-img';
+        /*var link = document.createElement('a');
+         link.appendChild(img);
+         link.href = imgSrc;
+         link.setAttribute('download', element + '.png');
+         $('.container').append($(link));*/
+        $('.container').append($(img));
 
-    });
+        if (itp.slide._current < itp.slide._data.length) {
+          itp.slide._current++;
+          itp.image.generate();
+        }
 
-  }
+      });
 
-};
+    }
 
-itp.init = function () {
+  };
 
-  itp.slide._data.push('<ol><li>Сельдь</li><li>Сливочное масло</li><li>Яйцо</li><li>Укроп</li></ol>');
-  itp.slide._data.push('1. Яйцо отварить, почистить. Размять вилкой.');
-  itp.slide._data.push('2. Добавить к яйцу размягченное сливочное масло, сельдь рубленную, лук репчатый и горчицу (последняя по желанию).');
-  itp.slide._data.push('3. Провернуть все ингредиенты в блендере вместе с укропом — до кремообразного состояния.');
-  itp.slide._data.push('4. Приятного аппетита!');
+  itp.init = function () {
 
-  itp.slide.generate();
+    itp.slide._data.push('<ol><li>Сельдь</li><li>Сливочное масло</li><li>Яйцо</li><li>Укроп</li></ol>');
+    itp.slide._data.push('1. Яйцо отварить, почистить. Размять вилкой.');
+    itp.slide._data.push('2. Добавить к яйцу размягченное сливочное масло, сельдь рубленную, лук репчатый и горчицу (последняя по желанию).');
+    itp.slide._data.push('3. Провернуть все ингредиенты в блендере вместе с укропом — до кремообразного состояния.');
+    itp.slide._data.push('4. Приятного аппетита!');
 
-};
+    itp.slide.generate();
 
-itp.init();
+  };
+
+  itp.init();
+
+});
