@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Прочитанные книги</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700|PT+Serif:400,700&amp;subset=cyrillic" rel="stylesheet">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form id="booksForm">
+        <h4 class="mt-5">На русском</h4>
+        <div class="form-group">
+          <label for="bookTitleRu">Название книги</label>
+          <input class="form-control" id="bookTitleRu" name="bookTitleRu" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="bookAuthorRu">Автор</label>
+          <input class="form-control" id="bookAuthorRu" name="bookAuthorRu" type="text" required>
+          <small class="form-text text-muted">В инициалах нужны пробелы после точки, например, Пушкин А. С.</small>
+        </div>
+        <h4 class="mt-5">На языке оригинала</h4>
+        <div class="form-group">
+          <label for="bookTitleEn">Название книги</label>
+          <input class="form-control" id="bookTitleEn" name="bookTitleEn" type="text">
+        </div>
+        <div class="form-group">
+          <label for="bookAuthorEn">Автор</label>
+          <input class="form-control" id="bookAuthorEn" name="bookAuthorEn" type="text">
+        </div>
+        <div class="form-group mt-5 ">
+          <label for="bookYear">Год написания или первой публикации</label>
+          <input class="form-control w-25" id="bookYear" name="bookYear" type="tel" maxlength="4" required>
+        </div>
+        <button class="btn btn-primary mt-5" type="submit">Генерировать</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

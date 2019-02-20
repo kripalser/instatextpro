@@ -1,24 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Instatext.pro</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Instatext.pro</title>
 </head>
 <body>
 
-    <div class="container">
+<div class="container">
 
-      <!--<a href="#" id="btn-download" class="button">Download</a>-->
+  <!-- Todo: make decent markup -->
 
-      <!--<div id="slideSample" class="slide"></div>-->
+  <form>
 
-    </div>
+    <h2>Ингредиенты</h2>
+    <label for="ingredient-1">Укажите ингредиент</label>
+    <input id="ingredient-1" name="ingredient-1" type="text">
+    <br>
+    <label for="ingredient-2">Укажите ингредиент</label>
+    <input id="ingredient-2" name="ingredient-2" type="text">
+    <br>
+    
+    <h2>Инструкция</h2>
+    <label for="step-1">Шаг первый</label>
+    <textarea id="step-1" name="step-1" cols="30" rows="10"></textarea>
 
-    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <label for="step-2">Шаг второй</label>
+    <textarea id="step-2" name="step-2" cols="30" rows="10"></textarea>
+
+    <label for="step-3">Шаг третий</label>
+    <textarea id="step-3" name="step-3" cols="30" rows="10"></textarea>
+
+    <label for="step-4">Шаг четвёртый</label>
+    <textarea id="step-4" name="step-4" cols="30" rows="10"></textarea>
+
+    <br>
+
+    <input type="submit">
+
+  </form>
+
+  <div id="results"></div>
+
+  <!--<a href="#" id="btn-download" class="button">Download</a>-->
+
+  <!--<div id="slideSample" class="slide"></div>-->
+
+</div>
+
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>

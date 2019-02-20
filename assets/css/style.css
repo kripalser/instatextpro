@@ -3,7 +3,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  /*font-family: Arial, sans-serif;*/
   margin: 0;
   padding: 30px 20px;
 }
@@ -13,19 +13,19 @@ body {
 }*/
 
 .slide {
-  /*display: flex;*/
-  display: none;
-  justify-content: center;
+  display: flex;
+  /*display: none;*/
+  /*justify-content: center;*/
   align-items: center;
   width: 1080px;
   height: 1080px;
   padding: 120px;
   font-size: 42px;
   /*text-align: center;*/
-  color: #35234b;
-  background: #ffefe0;
+  /*color: #35234b;*/
+  /*background: #ffefe0;*/
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,.05);
+  /*border: 1px solid rgba(0,0,0,.05);*/
 }
 
 .slide-img {
@@ -47,4 +47,35 @@ ol {
 
 canvas {
   display: none;
+}
+
+label {
+  display: block;
+}
+
+/* Books */
+
+.book-slide-title-primary {
+  font-family: "PT Serif", serif;
+  font-size: 5rem;
+}
+
+.book-slide-title-primary small,
+.book-slide-title-secondary small,
+.book-slide-year small {
+  display: block;
+  margin-top: .5em;
+  font-family: "PT Sans", sans-serif;
+  font-size: 80%;
+}
+
+.book-slide-title-secondary,
+.book-slide-year {
+  font-size: 4rem;
+  margin-top: 6rem;
+  opacity: .7;
+}
+
+.book-slide-year {
+  opacity: 1;
 }
