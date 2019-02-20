@@ -56,27 +56,34 @@ label {
 
 /* Books */
 
+.book-slide-content {
+  font-family: "PT Sans", sans-serif;
+  line-height: 1.2;
+}
+
 .book-slide-title-primary {
   font-family: "PT Serif", serif;
-  font-size: 5rem;
+  font-size: 6rem;
 }
 
-.book-slide-title-primary small,
-.book-slide-title-secondary small,
-.book-slide-year small {
-  display: block;
-  margin-top: .5em;
-  font-family: "PT Sans", sans-serif;
-  font-size: 3.25rem;
-}
-
-.book-slide-title-secondary,
-.book-slide-year {
+.book-slide-author-primary {
+  margin-top: 1.5rem;
   font-size: 4rem;
+}
+
+.book-slide-title-secondary {
   margin-top: 6rem;
+  font-size: 4rem;
+  opacity: .7;
+}
+
+.book-slide-author-secondary {
+  margin-top: .75rem;
+  font-size: 3.2rem;
   opacity: .7;
 }
 
 .book-slide-year {
-  opacity: 1;
+  margin-top: 6rem;
+  font-size: 3.2rem;
 }

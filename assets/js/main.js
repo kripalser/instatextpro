@@ -69,10 +69,12 @@ $(function () {
         }
 
         var bookSlideContent = '<div class="book-slide-content">' +
-                                 '<h1 class="book-slide-title-primary">' + bookTitleRu + '<small>' + bookAuthorRu + '</small></h1>' +
-                                 '<h2 class="book-slide-title-secondary">' + bookTitleEn + '<small>' + bookAuthorEn + '</small></h2>' +
-                                 '<h2 class="book-slide-year"><small>' + bookYear + '</small></h2>' +
-                               '</div>';
+                                 '<div class="book-slide-title-primary">' + bookTitleRu + '</div>' +
+                                 '<div class="book-slide-author-primary">' + bookAuthorRu + '</div>' +
+                                 '<div class="book-slide-title-secondary">' + bookTitleEn + '</div>' +
+                                 '<div class="book-slide-author-secondary">' + bookAuthorEn + '</div>' +
+                                 '<div class="book-slide-year">' + bookYear + '</div>' +
+                               '</div>'; // Todo: create a markup in HTML then clone it
 
         $(itp.document._target).append($(html).addClass('book-slide').append(bookSlideContent).attr('id', 'slide1'));
 
