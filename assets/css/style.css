@@ -58,11 +58,13 @@ label {
 
 .book-slide-content {
   font-family: "PT Sans", sans-serif;
+  font-weight: 400;
   line-height: 1.2;
 }
 
 .book-slide-title-primary {
   font-family: "PT Serif", serif;
+  font-weight: 400;
   font-size: 6rem;
 }
 
