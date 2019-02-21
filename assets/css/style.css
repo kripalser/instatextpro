@@ -22,8 +22,8 @@ body {
 }*/
 
 .slide {
-  display: flex;
-  /*display: none;*/
+  /*display: flex;*/
+  display: none;
   /*justify-content: center;*/
   align-items: center;
   width: 1080px;
@@ -95,4 +95,9 @@ label {
 .book-slide-year {
   margin-top: 6rem;
   font-size: 3.2rem;
+}
+
+.font-preload {
+  /*display: none;*/
+  font-family: "PT Serif", serif;
 }
