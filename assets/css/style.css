@@ -1,5 +1,7 @@
 /*@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&subset=cyrillic');*/
 
+/* Todo: make fonts display in iOS Safari */
+
 body.books {
   /*font-family: "PT Sans", sans-serif;*/
   padding: 20px;
@@ -98,6 +100,6 @@ label {
 }
 
 .font-preload {
-  /*display: none;*/
+  display: none;
   font-family: "PT Serif", serif;
 }
