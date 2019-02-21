@@ -1,12 +1,16 @@
-* {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&subset=cyrillic');
 
+/** {
+  box-sizing: border-box;
+}*/
+
+/*
 body {
-  /*font-family: Arial, sans-serif;*/
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 30px 20px;
 }
+*/
 
 /*.container {
   display: flex;
@@ -58,13 +62,11 @@ label {
 
 .book-slide-content {
   font-family: "PT Sans", sans-serif;
-  font-weight: 400;
   line-height: 1.2;
 }
 
 .book-slide-title-primary {
   font-family: "PT Serif", serif;
-  font-weight: 400;
   font-size: 6rem;
 }
 
