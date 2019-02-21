@@ -12,33 +12,41 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/books.css">
 
 </head>
-<body class="books">
+<body>
 
 <div class="container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
-      <form id="booksForm">
+      <form class="d-none-">
         <h4>На русском</h4>
-        <div class="form-group">
-          <label for="bookTitleRu">Название книги</label>
-          <input class="form-control" id="bookTitleRu" name="bookTitleRu" type="text" required>
-        </div>
         <div class="form-group">
           <label for="bookAuthorRu">Автор</label>
           <input class="form-control" id="bookAuthorRu" name="bookAuthorRu" type="text" required>
           <small class="form-text text-muted">В инициалах нужны пробелы после точки, например, Пушкин А. С.</small>
         </div>
-        <h4 class="mt-5">На языке оригинала</h4>
         <div class="form-group">
-          <label for="bookTitleEn">Название книги</label>
-          <input class="form-control" id="bookTitleEn" name="bookTitleEn" type="text">
+          <label for="bookTitleRu">Название книги</label>
+          <input class="form-control" id="bookTitleRu" name="bookTitleRu" type="text" required>
         </div>
         <div class="form-group">
-          <label for="bookAuthorEn">Автор</label>
-          <input class="form-control" id="bookAuthorEn" name="bookAuthorEn" type="text">
+          <label for="bookSeriesRu">Серия</label>
+          <input class="form-control" id="bookSeriesRu" name="bookSeriesRu" type="text">
+        </div>
+        <h4 class="mt-5">На языке оригинала</h4>
+        <div class="form-group">
+          <label for="bookAuthorOrig">Автор</label>
+          <input class="form-control" id="bookAuthorOrig" name="bookAuthorOrig" type="text">
+        </div>
+        <div class="form-group">
+          <label for="bookTitleOrig">Название книги</label>
+          <input class="form-control" id="bookTitleOrig" name="bookTitleOrig" type="text">
+        </div>
+        <div class="form-group">
+          <label for="bookSeriesOrig">Серия</label>
+          <input class="form-control" id="bookSeriesOrig" name="bookSeriesOrig" type="text">
         </div>
         <div class="form-group mt-5 ">
           <label for="bookYear">Год написания или первой публикации</label>
@@ -46,13 +54,28 @@
         </div>
         <button class="btn btn-primary mt-5" type="submit">Генерировать</button>
       </form>
-      <div class="font-preload">PT Serif</div>
     </div>
+  </div>
+</div>
+
+<div class="book-container d-none" id="bookContainer">
+  <div class="book-content">
+    <div class="book-meta-primary">
+      <div class="book-author-primary">Александр Волков</div>
+      <div class="book-title-primary">Волшебник Изумрудного города</div>
+      <div class="book-series-primary">Серия «Волшебник Изумрудного города»</div>
+    </div>
+    <div class="book-meta-secondary">
+      <div class="book-author-secondary">L. Frank Baum</div>
+      <div class="book-title-secondary">The Wonderful Wizard of Oz</div>
+      <div class="book-series-secondary">The Wonderful Wizard of Oz series</div>
+    </div>
+    <div class="book-year">1939</div>
   </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/books.js"></script>
 </body>
 </html>
