@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&subset=cyrillic');
+/*@import url('https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&subset=cyrillic');*/
+
+body.books {
+  font-family: "PT Sans", sans-serif;
+}
 
 /** {
   box-sizing: border-box;
