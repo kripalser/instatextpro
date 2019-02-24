@@ -7,7 +7,8 @@
   <title>Прочитанные книги</title>
 
   <!-- Google Fonts -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&amp;subset=cyrillic">
+  <!--<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans|PT+Serif&amp;subset=cyrillic">-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:700&amp;subset=cyrillic" rel="stylesheet">
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,7 +22,7 @@
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <form>
-        <h4>На русском</h4>
+        <!--<h4>На русском</h4>-->
         <div class="form-group">
           <label for="bookAuthorRu">Автор</label>
           <input class="form-control" id="bookAuthorRu" name="bookAuthorRu" type="text" required>
@@ -35,7 +36,7 @@
           <label for="bookSeriesRu">Серия</label>
           <input class="form-control" id="bookSeriesRu" name="bookSeriesRu" type="text">
         </div>
-        <h4 class="mt-5">На языке оригинала</h4>
+        <!--<h4 class="mt-5">На языке оригинала</h4>
         <div class="form-group">
           <label for="bookAuthorOrig">Автор</label>
           <input class="form-control" id="bookAuthorOrig" name="bookAuthorOrig" type="text">
@@ -47,12 +48,12 @@
         <div class="form-group">
           <label for="bookSeriesOrig">Серия</label>
           <input class="form-control" id="bookSeriesOrig" name="bookSeriesOrig" type="text">
-        </div>
-        <div class="form-group mt-5 ">
+        </div>-->
+        <div class="form-group">
           <label for="bookYear">Год написания или первой публикации</label>
           <input class="form-control w-25" id="bookYear" name="bookYear" type="tel" maxlength="4" required>
         </div>
-        <button class="btn btn-primary mt-5" type="submit">Генерировать</button>
+        <button class="btn btn-primary mt-3" type="submit">Генерировать</button>
       </form>
     </div>
   </div>
@@ -62,16 +63,16 @@
 <div class="book-container d-none" id="bookContainer">
   <div class="book-content">
     <div class="book-meta-primary">
-      <div class="book-author-primary">Александр Волков</div>
-      <div class="book-title-primary">Волшебник Изумрудного города</div>
-      <div class="book-series-primary">Серия «Волшебник Изумрудного города»</div>
+      <div class="book-author-primary">Роджер Желязны, Роберт Шекли</div>
+      <div class="book-title-primary">Принеси мне голову прекрасного принца</div>
+      <div class="book-series-primary">История рыжего демона</div>
     </div>
-    <div class="book-meta-secondary">
-      <div class="book-author-secondary">L. Frank Baum</div>
-      <div class="book-title-secondary">The Wonderful Wizard of Oz</div>
+    <!--<div class="book-meta-secondary">
+      <div class="book-author-secondary">Roger Zelazny, Robert Sheckley</div>
+      <div class="book-title-secondary">Bring Me the Head of Prince Charming</div>
       <div class="book-series-secondary">The Wonderful Wizard of Oz series</div>
-    </div>
-    <div class="book-year">1939</div>
+    </div>-->
+    <div class="book-year">1991</div>
   </div>
 </div>
 

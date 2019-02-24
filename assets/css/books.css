@@ -5,9 +5,10 @@ body {
 }
 
 .book-container {
+  background: #12a89d;
   width: 1080px;
   height: 1080px;
-  padding: 5rem 4rem;
+  padding: 4rem 3rem;
   overflow: hidden;
 }
 
@@ -20,6 +21,37 @@ canvas {
   display: none;
 }
 
+/* Version 2 */
+
+.book-content {
+  color: #231f20;
+  font-family: Roboto, sans-serif;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.1;
+  position: relative;
+  height: 100%;
+}
+
+.book-title-primary {
+  color: #fff;
+}
+
+.book-meta-secondary {
+  margin-top: 5rem;
+  font-size: 3rem;
+}
+
+.book-year {
+  margin-top: 5rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+/* Version 1 (too small) */
+
+/*
 .book-content {
   font-family: "PT Sans", sans-serif;
   line-height: 1.2;
@@ -58,4 +90,4 @@ canvas {
 .book-year {
   margin-top: 5rem;
   font-size: 3.2rem;
-}
+}*/
