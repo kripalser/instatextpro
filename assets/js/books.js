@@ -96,7 +96,9 @@ $(function () {
     $form.on('submit', function (e) {
       e.preventDefault();
       // itp.slide._data = $form.serializeArray();
-      $form.hide();
+      // $form.hide();
+      $form.addClass('d-none');
+      $('.btn-edit').removeClass('d-none');
 
       var formData = $form.serializeArray();
 
@@ -108,6 +110,12 @@ $(function () {
 
       itp.slide.generate();
 
+    });
+
+    $('.btn-edit').on('click', function (e) {
+      $('.book-img').remove();
+      $('form').removeClass('d-none');
+      $(e.target).addClass('d-none');
     });
 
     // itp.slide.generate();
