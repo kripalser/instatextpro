@@ -17,15 +17,22 @@ $(function () {
 
     generate: function () {
 
-      var $container = $('#' + itp.document._sourceId);
+      var $container    = $('#' + itp.document._sourceId);
+      var authorsCount  = $('.author-inputs').children().length;
 
       $container.find('.book-author-primary').html(itp.slide._data.bookAuthorRu);
       $container.find('.book-title-primary').html(itp.slide._data.bookTitleRu);
       $container.find('.book-series-primary').html(itp.slide._data.bookSeriesRu);
-      $container.find('.book-author-secondary').html(itp.slide._data.bookAuthorOrig);
-      $container.find('.book-title-secondary').html(itp.slide._data.bookTitleOrig);
-      $container.find('.book-series-secondary').html(itp.slide._data.bookSeriesOrig);
+      // $container.find('.book-author-secondary').html(itp.slide._data.bookAuthorOrig);
+      // $container.find('.book-title-secondary').html(itp.slide._data.bookTitleOrig);
+      // $container.find('.book-series-secondary').html(itp.slide._data.bookSeriesOrig);
       $container.find('.book-year').html(itp.slide._data.bookYear);
+
+      for (var i = 2; i <= authorsCount; i++) {
+        if (itp.slide._data['bookAuthorRu' + i]) {
+          $container.find('.book-author-primary').append(',<br>' + itp.slide._data['bookAuthorRu' + i]);
+        }
+      }
 
 /*      var bookTitleRu   = itp.slide._data.bookTitleRu,
           bookAuthorRu  = itp.slide._data.bookAuthorRu,
@@ -116,6 +123,29 @@ $(function () {
       $('.book-img').remove();
       $('form').removeClass('d-none');
       $(e.target).addClass('d-none');
+    });
+
+    $('.btn-add-author').on('click', function (e) {
+      e.preventDefault();
+
+      var $button = $(this),
+          $container  =  $('.author-inputs'),
+          count       = $container.children().length + 1,
+          $formGroup  = $('#formGroupAuthor').clone(),
+          $label      = $formGroup.find('label'),
+          $input      = $formGroup.find('input'),
+          $text       = $formGroup.find('.form-text');
+
+      $button.addClass('mt-1');
+      $formGroup.attr('id', $formGroup.attr('id') + count);
+      $label.attr('for', $label.attr('for') + count);
+      $label.html('Ещё один автор');
+      $input.val('');
+      $input.attr('id', $input.attr('id') + count);
+      $input.attr('name', $input.attr('name') + count);
+      $input.removeAttr('required');
+      $text.remove();
+      $formGroup.appendTo($container);
     });
 
     // itp.slide.generate();

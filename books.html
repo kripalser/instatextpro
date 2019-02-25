@@ -23,10 +23,15 @@
     <div class="col-md-6 offset-md-3">
       <form>
         <!--<h4>На русском</h4>-->
+        <div class="author-inputs mb-n3">
+          <div class="form-group" id="formGroupAuthor">
+            <label for="bookAuthorRu">Автор</label>
+            <input class="form-control" id="bookAuthorRu" name="bookAuthorRu" type="text" required>
+            <small class="form-text text-muted">Например, А. С. Пушкин</small>
+          </div>
+        </div>
         <div class="form-group">
-          <label for="bookAuthorRu">Автор</label>
-          <input class="form-control" id="bookAuthorRu" name="bookAuthorRu" type="text" required>
-          <small class="form-text text-muted">В инициалах нужны пробелы после точки, например, Пушкин А. С.</small>
+          <button class="btn btn-link btn-add-author" type="button">Добавить автора</button>
         </div>
         <div class="form-group">
           <label for="bookTitleRu">Название книги</label>
@@ -50,8 +55,9 @@
           <input class="form-control" id="bookSeriesOrig" name="bookSeriesOrig" type="text">
         </div>-->
         <div class="form-group">
-          <label for="bookYear">Год написания или первой публикации</label>
+          <label for="bookYear">Год первой публикации</label>
           <input class="form-control w-50" id="bookYear" name="bookYear" type="text" required>
+          <small class="form-text text-muted">Диапазоны пишутся так: 1941–1945</small>
         </div>
         <button class="btn btn-primary mt-3" type="submit">Генерировать</button>
       </form>
