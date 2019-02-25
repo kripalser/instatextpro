@@ -21,8 +21,8 @@ $(function () {
       var authorsCount  = $('.author-inputs').children().length;
 
       $container.find('.book-author-primary').html(itp.slide._data.bookAuthorRu);
-      $container.find('.book-title-primary').html(itp.slide._data.bookTitleRu).typographer();
-      $container.find('.book-series-primary').html(itp.slide._data.bookSeriesRu).typographer();
+      $container.find('.book-title-primary').html(itp.slide.addNbsp(itp.slide._data.bookTitleRu));
+      $container.find('.book-series-primary').html(itp.slide.addNbsp(itp.slide._data.bookSeriesRu));
       // $container.find('.book-author-secondary').html(itp.slide._data.bookAuthorOrig);
       // $container.find('.book-title-secondary').html(itp.slide._data.bookTitleOrig);
       // $container.find('.book-series-secondary').html(itp.slide._data.bookSeriesOrig);
@@ -36,6 +36,27 @@ $(function () {
 
       itp.image.generate();
 
+    },
+
+    addNbsp: function (text) {
+      /*! Typographer - v0.1.0 - 2015-08-18
+       * https://github.com/sakharstudio/typographer
+       * Copyright (c) 2015 Loginov Yura; Licensed MIT */
+      var prepositions = ["в", "во", "без", "до", "из", "к", "ко", "на", "по", "о", "от", "при", "с", "у", "не", "за", "над", "для", "об", "под", "про", "и", "а", "но", "да", "или", "ли", "бы", "то", "что", "как", "я", "он", "мы", "они", "ни", "же", "вы", "им"],
+        nbsp = '&nbsp;',
+        prepositionsOne = prepositions.map(function (item) {
+          return ' ' + item + ' ';
+        }),
+        prepositionsTwo = prepositions.map(function (item) {
+          return '&nbsp;' + item + ' ';
+        }),
+        regex = new RegExp(prepositionsOne.join('|'), 'gi'),
+        regex2 = new RegExp(prepositionsTwo.join('|'), 'gi'),
+        replacement = function (str) {
+          return str.slice(0, -1) + nbsp;
+        };
+
+      return text.replace(regex, replacement).replace(regex2, replacement);
     }
 
   };
@@ -83,7 +104,7 @@ $(function () {
 
       var formData = $form.serializeArray();
 
-      $(formData).each(function(index, obj) {
+      $(formData).each(function (index, obj) {
         itp.slide._data[obj.name] = obj.value;
       });
 
