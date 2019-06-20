@@ -1,57 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Прочитанные книги</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png">
+  <link rel="shortcut icon" href="assets/img/favicon/favicon.ico">
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:700&amp;subset=cyrillic" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/style.css">
-  <title>Instatext.pro</title>
+
 </head>
 <body>
 
 <div class="container">
-
-  <!-- Todo: make decent markup -->
-
-  <form>
-
-    <h2>Ингредиенты</h2>
-    <label for="ingredient-1">Укажите ингредиент</label>
-    <input id="ingredient-1" name="ingredient-1" type="text">
-    <br>
-    <label for="ingredient-2">Укажите ингредиент</label>
-    <input id="ingredient-2" name="ingredient-2" type="text">
-    <br>
-    
-    <h2>Инструкция</h2>
-    <label for="step-1">Шаг первый</label>
-    <textarea id="step-1" name="step-1" cols="30" rows="10"></textarea>
-
-    <label for="step-2">Шаг второй</label>
-    <textarea id="step-2" name="step-2" cols="30" rows="10"></textarea>
-
-    <label for="step-3">Шаг третий</label>
-    <textarea id="step-3" name="step-3" cols="30" rows="10"></textarea>
-
-    <label for="step-4">Шаг четвёртый</label>
-    <textarea id="step-4" name="step-4" cols="30" rows="10"></textarea>
-
-    <br>
-
-    <input type="submit">
-
-  </form>
-
-  <div id="results"></div>
-
-  <!--<a href="#" id="btn-download" class="button">Download</a>-->
-
-  <!--<div id="slideSample" class="slide"></div>-->
-
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form>
+        <!--<h4>На русском</h4>-->
+        <div class="author-inputs mb-n3">
+          <div class="form-group" id="formGroupAuthor">
+            <label for="bookAuthorRu">Автор</label>
+            <input class="form-control" id="bookAuthorRu" name="bookAuthorRu" type="text" required>
+            <small class="form-text text-muted">Например: А. П. Чехов</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-link btn-add-author" type="button">Добавить автора</button>
+        </div>
+        <div class="form-group">
+          <label for="bookTitleRu">Название книги</label>
+          <input class="form-control" id="bookTitleRu" name="bookTitleRu" type="text" required>
+        </div>
+        <div class="form-group">
+          <label for="bookSeriesRu">Серия</label>
+          <input class="form-control" id="bookSeriesRu" name="bookSeriesRu" type="text">
+        </div>
+        <!--<h4 class="mt-5">На языке оригинала</h4>
+        <div class="form-group">
+          <label for="bookAuthorOrig">Автор</label>
+          <input class="form-control" id="bookAuthorOrig" name="bookAuthorOrig" type="text">
+        </div>
+        <div class="form-group">
+          <label for="bookTitleOrig">Название книги</label>
+          <input class="form-control" id="bookTitleOrig" name="bookTitleOrig" type="text">
+        </div>
+        <div class="form-group">
+          <label for="bookSeriesOrig">Серия</label>
+          <input class="form-control" id="bookSeriesOrig" name="bookSeriesOrig" type="text">
+        </div>-->
+        <div class="form-group">
+          <label for="bookYear">Год первой публикации</label>
+          <input class="form-control w-50" id="bookYear" name="bookYear" type="text" required>
+          <!--<small class="form-text text-muted">Например: 1939, 1997–2007</small>-->
+        </div>
+        <button class="btn btn-primary mt-3" type="submit">Генерировать</button>
+      </form>
+    </div>
+  </div>
+  <button class="btn btn-outline-secondary btn-edit mb-5 d-none" type="button">Редактировать данные</button>
 </div>
 
-<script src="https://code.jquery.com/jquery-latest.min.js"></script>
-<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<div class="book-container d-none" id="bookContainer">
+  <div class="book-content">
+    <div class="book-meta-primary">
+      <div class="book-author-primary">Роджер Желязны, Роберт Шекли</div>
+      <div class="book-title-primary">Принеси мне голову прекрасного принца</div>
+      <div class="book-series-primary">История рыжего демона</div>
+    </div>
+    <!--<div class="book-meta-secondary">
+      <div class="book-author-secondary">Roger Zelazny, Robert Sheckley</div>
+      <div class="book-title-secondary">Bring Me the Head of Prince Charming</div>
+      <div class="book-series-secondary">The Wonderful Wizard of Oz series</div>
+    </div>-->
+    <div class="book-year">1991</div>
+  </div>
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/html2canvas.min.js"></script>
+<script src="assets/js/jquery.typographer.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
