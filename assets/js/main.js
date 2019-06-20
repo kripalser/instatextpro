@@ -23,9 +23,6 @@ $(function () {
       $container.find('.book-author-primary').html(itp.slide._data.bookAuthorRu);
       $container.find('.book-title-primary').html(itp.slide.addNbsp(itp.slide._data.bookTitleRu));
       $container.find('.book-series-primary').html(itp.slide.addNbsp(itp.slide._data.bookSeriesRu));
-      // $container.find('.book-author-secondary').html(itp.slide._data.bookAuthorOrig);
-      // $container.find('.book-title-secondary').html(itp.slide._data.bookTitleOrig);
-      // $container.find('.book-series-secondary').html(itp.slide._data.bookSeriesOrig);
       $container.find('.book-year').html(itp.slide._data.bookYear);
 
       for (var i = 2; i <= authorsCount; i++) {
@@ -71,9 +68,13 @@ $(function () {
 
       html2canvas($element, {
 
+        width: 1080,
+        height: 1080,
         onclone: function (clonedDocument) {
-          // $(clonedDocument).find(elementId).css('display', 'block');
           $(clonedDocument).find(elementId).removeClass('d-none');
+          // Removes extra elements and styles to prevent the canvas offset
+          $(clonedDocument).find('.form-container').remove();
+          $(clonedDocument).find('body').css({'padding': 0});
         }
 
       }).then(function (canvas) {
@@ -97,8 +98,6 @@ $(function () {
 
     $form.on('submit', function (e) {
       e.preventDefault();
-      // itp.slide._data = $form.serializeArray();
-      // $form.hide();
       $form.addClass('d-none');
       $('.btn-edit').removeClass('d-none');
 
@@ -107,8 +106,6 @@ $(function () {
       $(formData).each(function (index, obj) {
         itp.slide._data[obj.name] = obj.value;
       });
-
-      // console.log(itp.slide._data);
 
       itp.slide.generate();
 
@@ -123,13 +120,13 @@ $(function () {
     $('.btn-add-author').on('click', function (e) {
       e.preventDefault();
 
-      var $button = $(this),
-        $container  =  $('.author-inputs'),
-        count       = $container.children().length + 1,
-        $formGroup  = $('#formGroupAuthor').clone(),
-        $label      = $formGroup.find('label'),
-        $input      = $formGroup.find('input'),
-        $text       = $formGroup.find('.form-text');
+      var $button     = $(this),
+          $container  = $('.author-inputs'),
+          count       = $container.children().length + 1,
+          $formGroup  = $('#formGroupAuthor').clone(),
+          $label      = $formGroup.find('label'),
+          $input      = $formGroup.find('input'),
+          $text       = $formGroup.find('.form-text');
 
       $button.addClass('mt-1');
       $formGroup.attr('id', $formGroup.attr('id') + count);

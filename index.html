@@ -17,11 +17,10 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container form-container">
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <form>
-        <!--<h4>На русском</h4>-->
         <div class="author-inputs mb-n3">
           <div class="form-group" id="formGroupAuthor">
             <label for="bookAuthorRu">Автор</label>
@@ -40,23 +39,9 @@
           <label for="bookSeriesRu">Серия</label>
           <input class="form-control" id="bookSeriesRu" name="bookSeriesRu" type="text">
         </div>
-        <!--<h4 class="mt-5">На языке оригинала</h4>
-        <div class="form-group">
-          <label for="bookAuthorOrig">Автор</label>
-          <input class="form-control" id="bookAuthorOrig" name="bookAuthorOrig" type="text">
-        </div>
-        <div class="form-group">
-          <label for="bookTitleOrig">Название книги</label>
-          <input class="form-control" id="bookTitleOrig" name="bookTitleOrig" type="text">
-        </div>
-        <div class="form-group">
-          <label for="bookSeriesOrig">Серия</label>
-          <input class="form-control" id="bookSeriesOrig" name="bookSeriesOrig" type="text">
-        </div>-->
         <div class="form-group">
           <label for="bookYear">Год первой публикации</label>
           <input class="form-control w-50" id="bookYear" name="bookYear" type="text" required>
-          <!--<small class="form-text text-muted">Например: 1939, 1997–2007</small>-->
         </div>
         <button class="btn btn-primary mt-3" type="submit">Генерировать</button>
       </form>
@@ -72,18 +57,12 @@
       <div class="book-title-primary">Принеси мне голову прекрасного принца</div>
       <div class="book-series-primary">История рыжего демона</div>
     </div>
-    <!--<div class="book-meta-secondary">
-      <div class="book-author-secondary">Roger Zelazny, Robert Sheckley</div>
-      <div class="book-title-secondary">Bring Me the Head of Prince Charming</div>
-      <div class="book-series-secondary">The Wonderful Wizard of Oz series</div>
-    </div>-->
     <div class="book-year">1991</div>
   </div>
 </div>
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/html2canvas.min.js"></script>
-<script src="assets/js/jquery.typographer.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
