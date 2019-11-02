@@ -60,6 +60,8 @@ $(function () {
 
   itp.image = {
 
+    _canvas: undefined,
+
     generate: function () {
 
       var element = itp.document._sourceId;
@@ -79,12 +81,15 @@ $(function () {
 
       }).then(function (canvas) {
 
+        itp.image._canvas = canvas;
+
         var img = new Image();
 
         img.src = canvas.toDataURL();
         img.className = 'book-img';
 
         $('.container').append($(img));
+        $('.btn-download').removeClass('d-none');
 
       });
 
@@ -115,7 +120,14 @@ $(function () {
       $('.book-img').remove();
       $('form').removeClass('d-none');
       $(e.target).addClass('d-none');
+      $('.btn-download').addClass('d-none');
     });
+
+    $('.btn-download').on('click', function (e) {
+        itp.image._canvas.toBlob(function(blob) {
+          saveAs(blob, new Date().valueOf() + '.png');
+        });
+      });
 
     $('.btn-add-author').on('click', function (e) {
       e.preventDefault();
